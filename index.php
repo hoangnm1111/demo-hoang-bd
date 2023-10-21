@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <style>
         *{
             font-family: 'Be Vietnam Pro', sans-serif;
@@ -17,7 +18,7 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-light">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
         <div class="container-fluid">
@@ -63,7 +64,7 @@
                 <form>
                     <div class="modal-header">
                         <h5 class="modal-title d-flex align-items-center">
-                            <i class="bi bi-person-circle fs-3 me-2"></i> Người dùng đăng nhập
+                            <i class="bi bi-person-circle fs-3 me-2"></i> Đăng nhập tài khoản
                         </h5>
                         <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -88,27 +89,64 @@
     </div>
 
     <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <form>
                     <div class="modal-header">
                         <h5 class="modal-title d-flex align-items-center">
-                            <i class="bi bi-person-circle fs-3 me-2"></i> Người dùng đăng nhập
+                        <i class="bi bi-person-lines-fill fs-3 me-2"></i>
+                            Đăng ký tài khoản
                         </h5>
                         <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="mb-3">
-                            <label class="form-label">Địa chỉ Email</label>
-                            <input type="email" class="form-control shadow-none" >
+                        <span class="badge rounded-pill bg-info text-dark mb-3 text-wrap lh-base">
+                            Chú ý: Nhập đúng thông tin cá nhân, khi check-in trực tiếp tại sảnh chúng tôi sẽ kiểm tra
+                        </span>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Họ và tên</label>
+                                    <input type="text" class="form-control shadow-none" >
+                                </div>
+                                <div class="col-md-6 p-0 mb-3">
+                                    <label class="form-label">Số CCCD</label>
+                                    <input type="number" class="form-control shadow-none" >
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Số điện thoại</label>
+                                    <input type="number" class="form-control shadow-none" >
+                                </div>
+                                <div class="col-md-6 p-0 mb-3">
+                                    <label class="form-label">Ảnh</label>
+                                    <input type="file" class="form-control shadow-none" >
+                                </div>
+                                <div class="col-md-12 p-0 mb-3">
+                                    <label class="form-label">Địa chỉ</label>
+                                    <textarea class="form-control shadow-none" rows="1"></textarea>
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Ngày sinh</label>
+                                    <input type="date" class="form-control shadow-none" >
+                                </div>
+                                <div class="col-md-6 p-0 mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control shadow-none" >
+                                </div>
+                                <div class="col-md-6 ps-0 mb-3">
+                                    <label class="form-label">Mật khẩu</label>
+                                    <input type="password" class="form-control shadow-none" >
+                                </div>
+                                <div class="col-md-6 p-0 mb-3">
+                                    <label class="form-label">Nhập lại mật khẩu</label>
+                                    <input type="password" class="form-control shadow-none" >
+                                </div>
+                            </div>
+                        
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control shadow-none" >
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between ">
-                            <button type="submit" class="btn btn-dark shadow-none">ĐĂNG NHẬP</button>
-                            <a href= "javascipts: void(0)" class="text-secondary text-decoration-none">Quên mật khẩu?</a>
+
+                        <div class="text-center my-1">
+                            <button type="submit" class="btn btn-dark shadow-none">ĐĂNG KÝ</button>
                         </div>
                     </div> 
                 </form>
@@ -116,6 +154,36 @@
             </div>
         </div>
     </div>
+
+    <div class="container-fluid px-lg-4 mt-4">
+        <div class="swiper swiper-container">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/carousel/5.png" class="w-100 d-block"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="images/carousel/6.png" class="w-100 d-block"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="images/carousel/7.png" class="w-100 d-block"/>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+    var swiper = new Swiper(".swiper-container", {
+      spaceBetween: 30,
+      effect: "fade",
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      }
+    });
+    </script>
 </body>
 </html>
